@@ -25,7 +25,7 @@ public class EmployeeDAOImpl implements IEmployeeDAO {
 	@Override
 	public List<Employee> getEmployeesByDesgs(String desg1, String desg2, String desg3) throws Exception {
 
-		System.out.println("EmployeeDAOImpl.getEmployeesByDesgs()");
+		System.out.println("EmployeeDAOImpl.getEmployeesByDesgs(): "+ds.getClass());
 
 		List<Employee> empList = null;
 		Connection con = ds.getConnection();
