@@ -15,13 +15,13 @@ import com.nt.controller.PayrollOperationsController;
 import com.nt.model.Employee;
 
 @SpringBootApplication
-public class BootProj03LayeredAppApplication {
+public class BootProj03LayeredAppc3p0Application {
 
 	@Autowired
 	private Environment env;
 
 	public static void main(String[] args) {
-		ApplicationContext ctx = SpringApplication.run(BootProj03LayeredAppApplication.class, args);
+		ApplicationContext ctx = SpringApplication.run(BootProj03LayeredAppc3p0Application.class, args);
 		PayrollOperationsController controller = ctx.getBean("payroll", PayrollOperationsController.class);
 		try {
 			List<Employee> allEmployeesByDesgs = controller.showAllEmployeesByDesgs("CLERK", "MANAGER", "SALESMAN");

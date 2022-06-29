@@ -9,10 +9,10 @@ import com.nt.sbeans.Company;
 import com.nt.sbeans.Employee;
 
 @SpringBootApplication
-public class BootProj05ConfigurationPropertiesApplication {
+public class BootProj05ConfigurationPropertiesCustomPropertiesFileApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext context = SpringApplication.run(BootProj05ConfigurationPropertiesApplication.class, args);
+		ApplicationContext context = SpringApplication.run(BootProj05ConfigurationPropertiesCustomPropertiesFileApplication.class, args);
 		Company company = context.getBean("company", Company.class);
 		System.out.println(company);
 
