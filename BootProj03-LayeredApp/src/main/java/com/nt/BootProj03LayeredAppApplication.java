@@ -22,7 +22,6 @@ public class BootProj03LayeredAppApplication {
 				System.out.println(emp);
 			});
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		((ConfigurableApplicationContext) ctx).close();
