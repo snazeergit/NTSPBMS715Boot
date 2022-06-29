@@ -1,0 +1,17 @@
+org:
+  nit:
+    eno: 111
+    ename: Nazeer
+    favColors: [red, gree, yellow]
+    nickName: [Chinna, Munna, Kanna]
+    phoneNumbers: [111111,222222,33333]
+    idDetails:
+      aadharId: aaa1111
+      voterId: vvvv1111
+      passportId: ppp1111
+    company:
+      id: 123
+      name: HCL
+      addrs: Hyd
+      size: 10
+    
