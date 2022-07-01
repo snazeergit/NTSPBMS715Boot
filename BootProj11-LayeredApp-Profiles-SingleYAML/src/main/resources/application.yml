@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: test
+    active: uat
 ---
 spring:
   profiles: dev
@@ -30,7 +30,7 @@ spring:
     password: VMware1
     url: jdbc:mysql:///nazeerschema
     username: root
-
+    
 c3p0:
   maxSize: 100
   minSize: 10
