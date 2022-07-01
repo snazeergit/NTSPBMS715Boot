@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: uat
+    active: test
 ---
 spring:
   profiles: dev
@@ -36,7 +36,7 @@ c3p0:
   minSize: 10
 ---
 spring:
-  profile: uat
+  profiles: uat
   
   datasource:
     driver-class-name: oracle.jdbc.OracleDriver
