@@ -1,0 +1,46 @@
+spring:
+  profiles:
+    active: test
+---
+spring:
+  profiles: dev
+  
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: VMware1
+    type: org.apache.commons.dbcp2.BasicDataSource
+    url: jdbc:mysql:///nazeerschema
+    username: root
+---
+spring:
+  profiles: prod
+  
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    password: VMware1
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: system
+---
+spring:
+  profiles: test
+  
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: VMware1
+    url: jdbc:mysql:///nazeerschema
+    username: root
+
+c3p0:
+  maxSize: 100
+  minSize: 10
+---
+spring:
+  profile: uat
+  
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    password: VMware1
+    type: oracle.ucp.jdbc.PoolDataSourceImpl
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: system

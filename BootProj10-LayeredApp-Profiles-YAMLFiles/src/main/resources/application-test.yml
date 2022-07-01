@@ -1,0 +1,9 @@
+c3p0:
+  maxSize: 100
+  minSize: 10
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: VMware1
+    url: jdbc:mysql:///nazeerschema
+    username: root

@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    password: VMware1
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: system
