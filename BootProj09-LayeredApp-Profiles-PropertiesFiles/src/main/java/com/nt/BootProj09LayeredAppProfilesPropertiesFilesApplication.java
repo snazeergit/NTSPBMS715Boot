@@ -17,9 +17,14 @@ import com.nt.model.Employee;
 
 @SpringBootApplication
 public class BootProj09LayeredAppProfilesPropertiesFilesApplication {
-	
+
 	@Autowired
 	private Environment env;
+
+	public BootProj09LayeredAppProfilesPropertiesFilesApplication() {
+		System.out.println(
+				"BootProj09LayeredAppProfilesPropertiesFilesApplication.BootProj09LayeredAppProfilesPropertiesFilesApplication()");
+	}
 
 	//Reading database details from Properties file using Environment variable
 	@Bean(name = "c3p0")
@@ -36,7 +41,8 @@ public class BootProj09LayeredAppProfilesPropertiesFilesApplication {
 	}
 
 	public static void main(String[] args) {
-		ApplicationContext ctx = SpringApplication.run(BootProj09LayeredAppProfilesPropertiesFilesApplication.class, args);
+		ApplicationContext ctx = SpringApplication.run(BootProj09LayeredAppProfilesPropertiesFilesApplication.class,
+				args);
 		PayrollOperationsController controller = ctx.getBean("payroll", PayrollOperationsController.class);
 		try {
 			List<Employee> allEmployeesByDesgs = controller.showAllEmployeesByDesgs("CLERK", "MANAGER", "SALESMAN");

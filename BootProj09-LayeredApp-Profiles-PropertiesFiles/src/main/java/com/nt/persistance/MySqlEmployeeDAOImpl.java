@@ -19,11 +19,16 @@ import com.nt.model.Employee;
 @Profile({"dev", "test"})
 public class MySqlEmployeeDAOImpl implements IEmployeeDAO {
 
-	private static final String GET_EMPS_BY_DESGS = "SELECT ENO,ENAME,DESG,SAL,DEPTNO FROM EMPLOYEE WHERE DESG IN(?,?,?) ORDER BY DESG";
+	private static final String GET_EMPS_BY_DESGS = "SELECT EMPNO,ENAME,JOB,SAL,DEPTNO FROM EMPLOYEE WHERE JOB IN(?,?,?) ORDER BY JOB";
 
 	@Autowired
 	private DataSource ds;
 
+	public MySqlEmployeeDAOImpl() {
+	System.out.println("MySqlEmployeeDAOImpl.MySqlEmployeeDAOImpl()");
+	}
+	
+	
 	@Override
 	public List<Employee> getEmployeesByDesgs(String desg1, String desg2, String desg3) throws Exception {
 

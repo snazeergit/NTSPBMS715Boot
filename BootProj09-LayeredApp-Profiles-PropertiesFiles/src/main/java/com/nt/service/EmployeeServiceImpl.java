@@ -14,6 +14,10 @@ public class EmployeeServiceImpl implements IEmployeeService {
 	@Autowired
 	private IEmployeeDAO dao;
 
+	public EmployeeServiceImpl() {
+	System.out.println("EmployeeServiceImpl.EmployeeServiceImpl()");
+	}
+	
 	@Override
 	public List<Employee> fetchAllEmployeesByDesgs(String desg1, String desg2, String desg3) throws Exception {
 		System.out.println("EmployeeServiceImpl.fetchAllEmployeesByDesgs()");
