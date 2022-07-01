@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>nit</groupId>
-	<artifactId>BootProj07-YAML</artifactId>
+	<artifactId>BootProj07-YAML-WithDefultAndCustomPropsFile</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>BootProj07-YAML</name>
+	<name>BootProj07-YAML-WithDefultAndCustomPropsFile</name>
 	<description>Simple Spring Boot application with YAML</description>
 	<properties>
 		<java.version>17</java.version>

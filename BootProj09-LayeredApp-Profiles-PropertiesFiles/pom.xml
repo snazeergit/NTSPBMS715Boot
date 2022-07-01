@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>nit</groupId>
-	<artifactId>BootProj03-LayeredApp</artifactId>
+	<artifactId>BootProj09-LayeredApp-Profiles-PropertiesFiles</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>BootProj03-LayeredApp</name>
+	<name>BootProj09-LayeredApp-Profiles-PropertiesFiles</name>
 	<description>MVC layered App in Spring Boot style</description>
 	<properties>
 		<java.version>17</java.version>

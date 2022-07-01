@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>nit</groupId>
-	<artifactId>BootProj05-ConfigurationProperties</artifactId>
+	<artifactId>BootProj06-ConfigurationPropertiesOnArray-List-Set-Map-Has-A-Property</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>BootProj05-ConfigurationProperties</name>
+	<name>BootProj06-ConfigurationPropertiesOnArray-List-Set-Map-Has-A-Property</name>
 	<description>Simple Spring Boot application</description>
 	<properties>
 		<java.version>17</java.version>

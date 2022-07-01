@@ -19,7 +19,7 @@ import com.nt.model.Employee;
 @Profile({"dev", "test"})
 public class MySqlEmployeeDAOImpl implements IEmployeeDAO {
 
-	private static final String GET_EMPS_BY_DESGS = "SELECT EMPNO,ENAME,JOB,SAL,DEPTNO FROM EMPLOYEE WHERE JOB IN(?,?,?) ORDER BY JOB";
+	private static final String GET_EMPS_BY_DESGS = "SELECT ENO,ENAME,JOB,SAL,DEPTNO FROM EMPLOYEE WHERE JOB IN(?,?,?) ORDER BY JOB";
 
 	@Autowired
 	private DataSource ds;
