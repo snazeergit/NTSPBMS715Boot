@@ -26,7 +26,7 @@ public class BootProj09LayeredAppProfilesPropertiesFilesApplication {
 				"BootProj09LayeredAppProfilesPropertiesFilesApplication.BootProj09LayeredAppProfilesPropertiesFilesApplication()");
 	}
 
-	//Reading database details from Properties file using Environment variable
+	//Reading database details from Properties file using Environment variable.
 	@Bean(name = "c3p0")
 	@Profile("test")
 	public ComboPooledDataSource createC3P0DS() throws Exception {
