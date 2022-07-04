@@ -11,7 +11,7 @@ import lombok.Data;
 
 @Component("emp")
 @Data
-@ConfigurationProperties(prefix = "org.nit")
+@ConfigurationProperties( prefix = "org.nit")//for bulk injections
 public class Employee {
 
 	//Simple property

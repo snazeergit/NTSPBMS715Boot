@@ -13,7 +13,7 @@ import com.nt.sbeans.WishMessageGenerator;
 @SpringBootApplication
 public class BootProj01BasicDiApplication {
 
-	@Bean(name = "ldt")
+	@Bean
 	public LocalDateTime createLTD() {
 		System.out.println("BootProj01BasicDiApplication.createLTD()");
 		return LocalDateTime.now();

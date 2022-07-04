@@ -48,7 +48,7 @@ public class BootProj03LayeredAppc3p0Application {
 	}*/
 
 	//Reading database details from Properties file using Environment variable
-	@Bean(name = "c3p0")
+	@Bean
 	public ComboPooledDataSource createC3P0DS() throws Exception {
 		ComboPooledDataSource c3p0DS = new ComboPooledDataSource();
 		c3p0DS.setDriverClass(env.getProperty("spring.datasource.driver-class-name"));
