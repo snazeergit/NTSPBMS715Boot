@@ -18,17 +18,17 @@ import lombok.RequiredArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @RequiredArgsConstructor
-@Table(name = "DATA_JPA_ACTOR")
+@Table(name = "DATA_JPA_ACTOR1")
 public class Actor {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ACTOR_ID")
-	private Integer aId;
+	private Integer aid;
 
 	@Column(name = "ACTOR_NAME", length = 20)
 	@NonNull
-	private String aName;
+	private String aname;
 
 	@Column(name = "CATEGORY", length = 20)
 	@NonNull
