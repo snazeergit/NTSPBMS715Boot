@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.nt.entity.Actor;
+import com.nt.view.ResultView;
+import com.nt.view.View;
 
 public interface IActorRepository extends JpaRepository<Actor, Integer> {
 
@@ -32,7 +34,7 @@ public interface IActorRepository extends JpaRepository<Actor, Integer> {
 	public Iterable<Actor> findByAidBetween(int start, int end);
 
 	//select * from data_jpa_actor where upper(category)=upper(?)
-	public Iterable<Actor> findByCategoryEqualsIgnoreCase(String category);
+	//public Iterable<Actor> findByCategoryEqualsIgnoreCase(String category);
 
 	//select * from data_jpa_actor where aName like %?
 	//select * from data_jpa_actor where aName like ?%
@@ -57,5 +59,21 @@ public interface IActorRepository extends JpaRepository<Actor, Integer> {
 	//select * from data_jpa_actor where (aId>? and aId<?) or upper(category) not in (?,?,?,.....)
 	public Iterable<Actor> findByAidGreaterThanAndAidLessThanOrCategoryNotInIgnoreCase(int start, int end,
 			String... categories);
+	
+	//STATIC PROJECTIONS
+	
+	//The below method exist two times hence comment any one method. I have commented the first method above.  
+	//select aid, aname from data_jpa_actor where upper(category)=?
+	public Iterable<ResultView> findByCategoryEqualsIgnoreCase(String category);
+	
+	//select aid, aname from data_jpa_actor where mobileNo=?
+	public ResultView findByMobileNo(long mobileNo);
+	
+	//selcet * from data_jpa_actor where mobileNo=?
+	public Actor findByMobileNoIs(long mobileNo);
 
+	//DYNAMIC PROJECTIONS
+	
+	public <T extends View> Iterable<T> findByCategoryContainingIgnoreCase(String letters, Class<T> clazz);
+	
 }

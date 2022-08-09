@@ -18,7 +18,7 @@ import lombok.RequiredArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @RequiredArgsConstructor
-@Table(name = "DATA_JPA_ACTOR1")
+@Table(name = "DATA_JPA_ACTOR")
 public class Actor {
 
 	@Id
