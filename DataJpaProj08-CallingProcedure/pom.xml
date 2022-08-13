@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>nit</groupId>
-	<artifactId>DataJpaProj08-CallingProcedure</artifactId>
+	<artifactId>DataJpaProj08-CallingProcedure-Oracle</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>DataJpaProj08-CallingProcedure</name>
+	<name>DataJpaProj08-CallingProcedure-Oracle</name>
 	<description>Simple Spring Boot application with YAML</description>
 	<properties>
 		<java.version>17</java.version>
