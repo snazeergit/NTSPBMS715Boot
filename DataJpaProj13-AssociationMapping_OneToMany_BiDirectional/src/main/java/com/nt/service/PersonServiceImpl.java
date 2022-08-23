@@ -32,4 +32,15 @@ public class PersonServiceImpl implements IPersonService {
 		return list2.size() + " phone numbers are added to the Person record";
 	}
 
+	@Override
+	public Iterable<Person> loadDataUsingParent() {
+		return personRepo.findAll();
+	}
+
+	@Override
+	public Iterable<PhoneNumber> loadDataUsingChild() {
+	
+		return phoneRepo.findAll();
+	}
+
 }

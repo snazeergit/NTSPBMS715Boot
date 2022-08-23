@@ -10,5 +10,9 @@ public interface IPersonService {
 	public String saveDataUsingPerson(Person per);
 
 	public String saveDataUsingPhoneNumber(Set<PhoneNumber> list);
+	
+	public Iterable<Person> loadDataUsingParent();
+	
+	public Iterable<PhoneNumber> loadDataUsingChild();
 
 }

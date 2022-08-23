@@ -34,4 +34,9 @@ public class PhoneNumber {
 	@ManyToOne(targetEntity = Person.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "PERSON_ID", referencedColumnName = "PID")
 	private Person person;
+
+	public PhoneNumber() {
+		System.out.println("PhoneNumber::0-param Constructor" + this.getClass());
+	}
+
 }

@@ -45,33 +45,48 @@ public class AssociationMappingTestRunner implements CommandLineRunner {
 			e.printStackTrace();
 		}*/
 
-		//Save object operation (Parent to Child)
+		/*//Save object operation (Parent to Child)
 		Person person = new Person();
 		person.setPname("Sardar");
 		person.setPaddrs("Nellore");
-
+		
 		PhoneNumber ph1 = new PhoneNumber();
 		ph1.setNumber_type("Home");
 		ph1.setPhone_number(7777L);
 		ph1.setProvider("Jio");
 		ph1.setPerson(person); //Child to Person (Many to One)
-
+		
 		PhoneNumber ph2 = new PhoneNumber();
 		ph2.setNumber_type("Office");
 		ph2.setPhone_number(6666L);
 		ph2.setProvider("Airtel");
 		ph2.setPerson(person); //Child to Person (Many to One)
-
+		
 		Set<PhoneNumber> phoneSet = new HashSet<>();
 		phoneSet.add(ph1);
 		phoneSet.add(ph2);
 		person.setPhones(phoneSet); //Parent to Child (One to Many)
-
+		
 		try {
 			service.saveDataUsingPhoneNumber(phoneSet);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		}*/
+
+		/*service.loadDataUsingParent().forEach(per -> {
+			System.out.println("parent::" + per);
+			Set<PhoneNumber> child = per.getPhones();
+			child.forEach(ph -> {
+				System.out.println("Child::" + ph);
+			});
+		});*/
+
+		service.loadDataUsingChild().forEach(ph -> {
+			System.out.println("Child::" + ph);
+			//get Associated parent
+			Person person = ph.getPerson();
+			System.out.println("Parent::" + person);
+		});
 	}
 
 }

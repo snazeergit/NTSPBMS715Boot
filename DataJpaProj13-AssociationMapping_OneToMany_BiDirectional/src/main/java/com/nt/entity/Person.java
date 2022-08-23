@@ -38,4 +38,8 @@ public class Person implements Serializable {
 	@OneToMany(targetEntity = PhoneNumber.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "PERSON_ID", referencedColumnName = "PID")
 	private Set<PhoneNumber> phones;
+
+	public Person() {
+		System.out.println("Person::0-param Constructor" + this.getClass());
+	}
 }
