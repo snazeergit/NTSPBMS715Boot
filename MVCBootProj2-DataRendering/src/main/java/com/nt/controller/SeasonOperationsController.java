@@ -23,6 +23,7 @@ public class SeasonOperationsController {
 	public String showSeasons(Map<String, Object> map) {
 		String season = service.findSeason();
 		map.put("season", season);
+		//return LVN
 		return "display";
 	}
 }
