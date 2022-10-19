@@ -17,12 +17,14 @@ public class StudentOperationsController {
 		return "welcome";
 	}
 
+	//Deafault values initialed in model class obj will be displayed in form comp
 	@GetMapping("/register")
 	public String showRegistrationForm(@ModelAttribute("std") Student st) {
 		System.out.println(st);
 		return "student_register";
 	}
 
+	//user input values into form comp will be injected into Model attribute
 	@PostMapping("/register")
 	public String registerStudent(Map<String, Object> map, @ModelAttribute("std") Student st) {
 		System.out.println(st);
