@@ -25,6 +25,7 @@ public class StudentOperationsController {
 	@PostMapping("/register")
 	public String registerStudent(Map<String, Object> map, @ModelAttribute("std") Student st) {
 		System.out.println(st);
+		System.out.println(map);
 		return "result";
 	}
 
