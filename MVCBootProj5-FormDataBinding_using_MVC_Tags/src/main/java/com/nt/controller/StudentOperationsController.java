@@ -26,7 +26,7 @@ public class StudentOperationsController {
 
 	//user input values into form comp will be injected into Model attribute
 	@PostMapping("/register")
-	public String registerStudent(Map<String, Object> map, @ModelAttribute("std") Student st) {
+	public String registerStudent(Map<String, Object> map, @ModelAttribute("std1") Student st) {
 		System.out.println(st);
 		String grade=null;
 		grade=st.getAvg()>=75? "First Class with Distinction":

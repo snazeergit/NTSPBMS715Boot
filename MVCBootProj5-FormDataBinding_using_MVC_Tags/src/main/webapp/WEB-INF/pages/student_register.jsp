@@ -2,7 +2,7 @@
 
 <h1 style="color: green; text-align: center">Student Registration
 	Page</h1>
-<frm:form action="register" method="post" modelAttribute="std">
+<frm:form action="register" method="post" modelAttribute="std1">
 	<table bgcolor="pink" align="center">
 		<tbody>
 			<tr>
