@@ -25,8 +25,10 @@ public class RequestParamsController {
 		return "show_result";
 	}
 
+	//Possible attributes to be used within @RequestParam
+	//@RequestParam(name = "sno", required = false, defaultValue = "10") Integer sno
 	@GetMapping("/data2")
-	public String process2(@RequestParam(required = false) Integer sno,
+	public String process2(@RequestParam(name = "sno", required = false, defaultValue = "10") Integer sno,
 			@RequestParam(defaultValue = "PS1") String sname) {
 		System.out.println(sno + "   " + sname);
 		//return LVN
