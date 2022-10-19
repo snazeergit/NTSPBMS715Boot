@@ -27,6 +27,7 @@ public class RequestParamsController {
 
 	//Possible attributes to be used within @RequestParam
 	//@RequestParam(name = "sno", required = false, defaultValue = "10") Integer sno
+	//@RequestParam(value = "sno", required = false, defaultValue = "10") Integer sno
 	@GetMapping("/data2")
 	public String process2(@RequestParam(name = "sno", required = false, defaultValue = "10") Integer sno,
 			@RequestParam(defaultValue = "PS1") String sname) {

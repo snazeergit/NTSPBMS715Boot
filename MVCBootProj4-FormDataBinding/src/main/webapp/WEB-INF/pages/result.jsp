@@ -3,5 +3,8 @@
 <br>
 <br>
 <b>Student data is :: ${std}</b>
+<!-- 
+<b>Student data is :: ${student}</b>
+ -->
 <br>
 <a href="./">Home</a>

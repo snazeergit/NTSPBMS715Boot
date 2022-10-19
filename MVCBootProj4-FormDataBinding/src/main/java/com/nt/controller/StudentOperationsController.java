@@ -23,11 +23,13 @@ public class StudentOperationsController {
 	}
 
 	//Possible attributes to be used within @ModelAttribute
-	//@ModelAttribute(name = "std") Student sno
-	//@ModelAttribute(value = "std") Student sno
-	//@ModelAttribute("std") Student sno
+	//@ModelAttribute(name = "std") Student st
+	//@ModelAttribute(value = "std") Student st
+	//@ModelAttribute("std") Student st
+	//@ModelAttribute Student st      if we do not specify model attrbute name it takes the model class name as the model attribute name i.e student
 	@PostMapping("/register")
-	public String registerStudent(Map<String, Object> map, @ModelAttribute(name = "std") Student st) {
+	public String registerStudent(Map<String, Object> map, @ModelAttribute("std") Student st) {
+		//map.put("st", st);
 		System.out.println(st);
 		System.out.println(map);
 		return "result";
