@@ -22,8 +22,12 @@ public class StudentOperationsController {
 		return "student_register";
 	}
 
+	//Possible attributes to be used within @ModelAttribute
+	//@ModelAttribute(name = "std") Student sno
+	//@ModelAttribute(value = "std") Student sno
+	//@ModelAttribute("std") Student sno
 	@PostMapping("/register")
-	public String registerStudent(Map<String, Object> map, @ModelAttribute("std") Student st) {
+	public String registerStudent(Map<String, Object> map, @ModelAttribute(name = "std") Student st) {
 		System.out.println(st);
 		System.out.println(map);
 		return "result";
