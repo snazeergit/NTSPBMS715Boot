@@ -26,7 +26,7 @@
 					<td>${emp.deptno}</td>
 					<td><a href="emp_edit?eno=${emp.eno }">EDIT<img
 							width="30px" height="30px" src="images/edit.png" /></a> <a
-						href="emp_delete?eno=${emp.eno }">DELETE<img width="30px"
+						href="emp_delete?eno=${emp.eno }" onclick="return confirm('Are you sure want to delete the employee ?')">DELETE<img width="30px"
 							height="30px" src="images/delete.png" /></a></td>
 				</tr>
 			</c:forEach>
