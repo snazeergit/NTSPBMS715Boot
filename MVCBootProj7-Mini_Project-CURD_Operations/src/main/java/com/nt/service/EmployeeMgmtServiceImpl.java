@@ -22,4 +22,15 @@ public class EmployeeMgmtServiceImpl implements IEmployeeMgmtService {
 		return "employee saved with id value " + empRepo.save(emp).getEno();
 	}
 
+	@Override
+	public Employee getEmployeeByNo(Integer eno) {
+		Employee employee = empRepo.findById(eno).orElseThrow(() -> new IllegalArgumentException());
+		return employee;
+	}
+
+	@Override
+	public String updateEmployee(Employee emp) {
+		return "Employee with ID " + empRepo.save(emp).getEno() + " is updted successfully";
+	}
+
 }

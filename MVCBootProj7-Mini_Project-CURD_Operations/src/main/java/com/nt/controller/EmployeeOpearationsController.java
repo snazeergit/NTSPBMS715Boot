@@ -4,11 +4,14 @@ import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.nt.model.Employee;
 import com.nt.service.IEmployeeMgmtService;
@@ -115,9 +118,29 @@ public class EmployeeOpearationsController {
 			//keep the result as flash attribute
 			session.setAttribute("resultMsg", msg);
 		
-			//return LVN
+			//redirect to destination handler
 			return "redirect:emp_report";
 		}
 	
+		@GetMapping("/emp_edit")
+		public String showEditEmployeeForm(@RequestParam("eno") Integer no, @ModelAttribute("emp") Employee employee) {
+			Employee employee2 = empService.getEmployeeByNo(no);
+			
+			//Copy data from source obj to dest obj
+			BeanUtils.copyProperties(employee2, employee);
 
+			//return LVN
+			return "update_emp";
+		}
+		
+		@PostMapping("/emp_edit")
+		public String EditEmployee(RedirectAttributes attrs, @ModelAttribute("emp") Employee employee) {
+			String msg = empService.updateEmployee(employee);
+			
+			//add result message to flash attribute 
+			attrs.addFlashAttribute("resultMsg", msg);
+
+			//redirect to destination handler
+			return "redirect:emp_report";
+		}
 }
