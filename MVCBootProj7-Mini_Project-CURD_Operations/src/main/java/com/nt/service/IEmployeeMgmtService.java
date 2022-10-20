@@ -7,4 +7,5 @@ public interface IEmployeeMgmtService {
 	public String registerEmployee(Employee emp);
 	public Employee getEmployeeByNo(Integer eno);
 	public String updateEmployee(Employee emp);
+	public String deleteEmployeeByNo(Integer eno);
 }

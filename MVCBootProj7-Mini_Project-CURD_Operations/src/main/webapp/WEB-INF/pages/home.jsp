@@ -1,6 +1,6 @@
 <%@ page isELIgnored="false"%>
-<h1 style="color: blue; text-align: center">Welcome to Employee
-	Management System</h1>
+<div style="color: blue; text-align: center; font-size:60px;font-weight:bolder;background:yellow">Welcome to Employee
+	Management System</div>
 <br>
 <br>
 <h2 style="color: red; text-align: center">

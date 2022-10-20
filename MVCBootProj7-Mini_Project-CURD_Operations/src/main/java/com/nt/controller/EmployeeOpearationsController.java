@@ -143,4 +143,15 @@ public class EmployeeOpearationsController {
 			//redirect to destination handler
 			return "redirect:emp_report";
 		}
+		
+		@GetMapping("/emp_delete")
+		public String deleteEmployee(@RequestParam("eno") Integer no, RedirectAttributes attrs) {
+			String msg = empService.deleteEmployeeByNo(no);
+			
+			//add result message to flash attribute 
+			attrs.addFlashAttribute("resultMsg", msg);
+			
+			//redirect to destination handler
+			return "redirect:emp_report";
+		}
 }
