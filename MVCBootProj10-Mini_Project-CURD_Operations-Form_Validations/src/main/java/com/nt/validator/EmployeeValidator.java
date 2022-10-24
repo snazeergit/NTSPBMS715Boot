@@ -32,10 +32,11 @@ public class EmployeeValidator implements Validator {
 			errors.rejectValue("job", "emp.job.length");
 		}
 
-		if (emp.getSal() == null) {//required rule
-			errors.rejectValue("sal", "emp.salary.required");
-		} else if (emp.getSal() < 10000 || emp.getSal() >= 1000000) {//range rule
-			errors.rejectValue("sal", "emp.salary.range");
+		if (!errors.hasFieldErrors("sal")) {
+			if (emp.getSal() == null) //required rule
+				errors.rejectValue("sal", "emp.salary.required");
+			else if (emp.getSal() < 1000.0 || emp.getSal() >= 10000.0) //range rule
+				errors.rejectValue("sal", "emp.salary.range");
 		}
 
 		if (emp.getDeptno() == null) {//required rule

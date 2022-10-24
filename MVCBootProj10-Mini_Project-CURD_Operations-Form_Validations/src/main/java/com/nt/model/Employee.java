@@ -14,7 +14,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "EMP")
+@Table(name = "BOOT_EMP")
 public class Employee implements Serializable {
 
 	@Id
@@ -29,4 +29,5 @@ public class Employee implements Serializable {
 	private String job;
 	private Float sal;
 	private Integer deptno;
+	private String status = "active";
 }

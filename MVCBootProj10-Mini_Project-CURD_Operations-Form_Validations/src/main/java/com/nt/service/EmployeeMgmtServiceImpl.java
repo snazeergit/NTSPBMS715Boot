@@ -52,4 +52,11 @@ public class EmployeeMgmtServiceImpl implements IEmployeeMgmtService {
 		return deptNoList;
 	}
 
+	@Override
+	public boolean isDesignationRejectedList(String desg) {
+		if (desg.equalsIgnoreCase("TeamLeader"))
+			return true;
+		else
+			return false;
+	}
 }

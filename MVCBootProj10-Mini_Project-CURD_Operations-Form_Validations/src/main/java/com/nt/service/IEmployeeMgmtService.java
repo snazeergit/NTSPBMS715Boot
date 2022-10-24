@@ -12,4 +12,5 @@ public interface IEmployeeMgmtService {
 	public String deleteEmployeeByNo(Integer eno);
 	
 	public List<Integer> fetchAllDeptNo();
+	public boolean isDesignationRejectedList(String desg);
 }

@@ -15,6 +15,7 @@
 				<th>EMP JOB</th>
 				<th>EMP SALARY</th>
 				<th>EMP DEPT NO</th>
+				<th>EMP STATUS</th>
 				<th>OPERATIONS</th>
 			</tr>
 			<c:forEach var="emp" items="${empList}">
@@ -24,6 +25,7 @@
 					<td>${emp.job}</td>
 					<td>${emp.sal}</td>
 					<td>${emp.deptno}</td>
+					<td>${emp.status}</td>
 					<td><a href="emp_edit?eno=${emp.eno }">EDIT<img
 							width="30px" height="30px" src="images/edit.png" /></a> <a
 						href="emp_delete?eno=${emp.eno }" onclick="return confirm('Are you sure want to delete the employee ?')">DELETE<img width="30px"
