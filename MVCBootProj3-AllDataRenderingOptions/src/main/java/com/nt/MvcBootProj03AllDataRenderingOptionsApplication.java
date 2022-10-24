@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MvcBootProj5FormDataBindingUsingMvcTagsApplication {
+public class MvcBootProj03AllDataRenderingOptionsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MvcBootProj5FormDataBindingUsingMvcTagsApplication.class, args);
+		SpringApplication.run(MvcBootProj03AllDataRenderingOptionsApplication.class, args);
 	}
 
 }

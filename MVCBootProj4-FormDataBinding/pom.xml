@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>nit</groupId>
-	<artifactId>MVCBootProj4-FormDataBinding</artifactId>
+	<artifactId>MVCBootProj04-FormDataBinding</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>MVCBootProj4-FormDataBinding</name>
+	<name>MVCBootProj04-FormDataBinding</name>
 	<description>MVC Application</description>
 	<properties>
 		<java.version>1.8</java.version>

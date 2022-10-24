@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>nit</groupId>
-	<artifactId>MVCBootProj1-ShowingHomePage</artifactId>
+	<artifactId>MVCBootProj01-ShowingHomePage</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>MVCBootProj1-ShowingHomePage</name>
+	<name>MVCBootProj01-ShowingHomePage</name>
 	<description>Simple Spring Boot application with YAML</description>
 	<properties>
 		<java.version>17</java.version>

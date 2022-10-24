@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MvcBootProj6ParamDataBindingApplication {
+public class MvcBootProj08MiniProjectCurdOperationsSoftDeletionApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MvcBootProj6ParamDataBindingApplication.class, args);
+		SpringApplication.run(MvcBootProj08MiniProjectCurdOperationsSoftDeletionApplication.class, args);
 	}
 
 }

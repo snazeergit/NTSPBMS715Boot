@@ -7,7 +7,7 @@ public class ServletInitializer extends SpringBootServletInitializer {
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(MvcBootProj6ParamDataBindingApplication.class);
+		return application.sources(MvcBootProj06ParamDataBindingApplication.class);
 	}
 
 }

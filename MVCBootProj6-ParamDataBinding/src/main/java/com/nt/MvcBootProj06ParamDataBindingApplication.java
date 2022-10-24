@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MvcBootProj1ShowingHomePageApplication {
+public class MvcBootProj06ParamDataBindingApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MvcBootProj1ShowingHomePageApplication.class, args);
+		SpringApplication.run(MvcBootProj06ParamDataBindingApplication.class, args);
 	}
 
 }

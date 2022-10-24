@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>nit</groupId>
-	<artifactId>MVCBootProj2-DataRendering</artifactId>
+	<artifactId>MVCBootProj02-DataRendering</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>MVCBootProj2-DataRendering</name>
+	<name>MVCBootProj02-DataRendering</name>
 	<description>MVC Application</description>
 	<properties>
 		<java.version>1.8</java.version>

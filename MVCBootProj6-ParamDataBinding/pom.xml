@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>nit</groupId>
-	<artifactId>MVCBootProj6-ParamDataBinding</artifactId>
+	<artifactId>MVCBootProj06-ParamDataBinding</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>MVCBootProj6-ParamDataBinding</name>
+	<name>MVCBootProj06-ParamDataBinding</name>
 	<description>MVC Application</description>
 	<properties>
 		<java.version>1.8</java.version>

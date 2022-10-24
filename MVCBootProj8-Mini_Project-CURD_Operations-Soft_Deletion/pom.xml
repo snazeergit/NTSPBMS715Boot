@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>nit</groupId>
-	<artifactId>MVCBootProj8-Mini_Project-CURD_Operations-Soft_Deletion</artifactId>
+	<artifactId>MVCBootProj08-Mini_Project-CURD_Operations-Soft_Deletion</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>MVCBootProj8-Mini_Project-CURD_Operations-Soft_Deletion</name>
+	<name>MVCBootProj08-Mini_Project-CURD_Operations-Soft_Deletion</name>
 	<description>MVC Application</description>
 	<properties>
 		<java.version>1.8</java.version>

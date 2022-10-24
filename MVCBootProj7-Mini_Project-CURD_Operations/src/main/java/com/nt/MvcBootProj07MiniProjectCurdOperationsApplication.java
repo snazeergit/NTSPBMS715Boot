@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MvcBootProj4FormDataBindingApplication {
+public class MvcBootProj07MiniProjectCurdOperationsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MvcBootProj4FormDataBindingApplication.class, args);
+		SpringApplication.run(MvcBootProj07MiniProjectCurdOperationsApplication.class, args);
 	}
 
 }

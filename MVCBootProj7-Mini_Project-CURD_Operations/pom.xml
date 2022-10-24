@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>nit</groupId>
-	<artifactId>MVCBootProj7-Mini_Project-CURD_Operations</artifactId>
+	<artifactId>MVCBootProj07-Mini_Project-CURD_Operations</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>MVCBootProj7-Mini_Project-CURD_Operations</name>
+	<name>MVCBootProj07-Mini_Project-CURD_Operations</name>
 	<description>MVC Application</description>
 	<properties>
 		<java.version>11</java.version>
