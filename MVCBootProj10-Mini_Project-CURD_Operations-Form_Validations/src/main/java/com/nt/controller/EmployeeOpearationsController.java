@@ -52,72 +52,8 @@ public class EmployeeOpearationsController {
 		return "register_emp";
 	}
 
-	/*
-	 //Problem: Double Posting or Form Duplication problem with this code(refresh the page once submitted duplicate entry will be inserted)
-		@PostMapping("/emp_add")
-		public String saveEmployee(@ModelAttribute("emp") Employee emp, Map<String, Object> map) {
-			String msg = empService.registerEmployee(emp);
-			Iterable<Employee> allEmployees = empService.getAllEmployees();
-			
-			//keeping the results in model attribute
-			map.put("resultMsg", msg);
-			map.put("empList", allEmployees);
-			
-			//return LVN
-			return "show_emp_report";
-		}
-	*/
-
-	/*
-		//Solution1. Implementing PRG(Post Redirect Get Pattern) 
-	    //[refresh the page once submitted duplicate entry will not be inserted but you will not get result msg even when you submitted for the first time.]
-		@PostMapping("/emp_add")
-		public String saveEmployee(@ModelAttribute("emp") Employee emp, Map<String, Object> map) {
-	
-			//Model attribute Map<String, Object> is also shared memory specific to each request, which means data stored in first request
-			//will only be accecible within the first request scope, second request will not access to it as its default scope is request scope.
-	
-			String msg = empService.registerEmployee(emp);
-			
-			//when we redirect the results from source handler to destination handler, both will have two different request and response objects
-			//Hence results added to the model attribute map in source handler will not be available to the destination handler as model attributes have request scope as 
-			// default scope and they available within the same request scope.
-			//resultMsg will not be available to destination handler method
-			map.put("resultMsg", msg);
-			
-			//return LVN
-			return "redirect:emp_report";
-		}
-	*/
-
-	/*
-	 //Solution2. Implementing PRG(Post Redirect Get Pattern) keeping Flash attributes in RedirectAttributes obj
-	//[refresh the page once submitted duplicate entry will not be inserted and you will get result msg when you submit request everytime, but if you refresh result msg will not come]
-	@PostMapping("/emp_add")
-	public String saveEmployee(@ModelAttribute("emp") Employee emp, RedirectAttributes attrs) {
-	
-		//RedirectAttributes are special shared memory which holds the attriubutes only during course of Redirection
-		//i.e., once the Redirectio is over, attributes in this special shared memory will be vanished..
-		//that's why these attributes are called FlashAttributes.
-	
-		String msg = empService.registerEmployee(emp);
-	
-		//keep the result as flash attribute
-		attrs.addFlashAttribute("resultMsg", msg);
-		
-		//return LVN
-		return "redirect:emp_report";
-	}
-	*/
-
-	//Solution3. Implementing PRG(Post Redirect Get Pattern) keeping Flash attributes in HttpSession obj
-	//[refresh the page once submitted duplicate entry will not be inserted and you will get result msg when you submit request everytime also when you refresh]
 	@PostMapping("/emp_add")
 	public String saveEmployee(@ModelAttribute("emp") Employee emp, HttpSession session, BindingResult errors) {
-
-		//RedirectAttributes are special shared memory which holds the attriubutes only during course of Redirection
-		//i.e., once the Redirectio is over, attributes in this special shared memory will be vanished..
-		//that's why these attributes are called FlashAttributes.
 
 		//use Validator
 		if (empValidator.supports(Employee.class)) {
@@ -154,7 +90,7 @@ public class EmployeeOpearationsController {
 		if (empValidator.supports(Employee.class)) {
 			empValidator.validate(emp, errors);
 			if (errors.hasErrors())//if form validation error messages are found
-				return "register_emp";
+				return "update_emp";
 		}
 
 		//add result message to flash attribute 
