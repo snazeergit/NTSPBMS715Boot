@@ -1,6 +1,7 @@
 <%@ page isELIgnored="false"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="frm"%>
 <link rel="stylesheet" type="text/css" href="css/style.css" />
+<script language="JavaScript" src="js/validation.js"></script>
 
 <div
 	style="color: blue; text-align: center; font-size: 60px; font-weight: bolder; background: yellow">Welcome
@@ -8,7 +9,8 @@
 <br>
 <br>
 <h2 style="color: red; text-align: center">Register Employee</h2>
-<frm:form modelAttribute="emp" action="emp_add" method="post">
+<frm:form modelAttribute="emp" action="emp_add" method="post"
+	onsubmit="return doValidations(this)">
 	<%--
 		<!-- For FORM VALIDATIONS -->
 		<p style="color: red; text-align: center">
@@ -19,24 +21,24 @@
 
 		<tr>
 			<td>EMP NAME ::</td>
-			<td><frm:input path="ename" />
-				<frm:errors path="ename" /></td>
+			<td><frm:input path="ename" /> <frm:errors path="ename" /> <span
+				id="enameErr"></span></td>
 		</tr>
 		<tr>
 			<td>EMP JOB ::</td>
-			<td><frm:input path="job" />
-				<frm:errors path="job" /></td>
+			<td><frm:input path="job" /> <frm:errors path="job" /> <span
+				id="jobErr"></span></td>
 		</tr>
 		<tr>
 			<td>EMP SALARY ::</td>
-			<td><frm:input path="sal" />
-				<frm:errors path="sal" /></td>
+			<td><frm:input path="sal" /> <frm:errors path="sal" /><span
+				id="salErr"></span></td>
 		</tr>
 		<tr>
 			<td>EMP DEPT NO ::</td>
 			<td><frm:select path="deptno">
 					<frm:options items="${deptNoInfo}" />
-				</frm:select></td>
+				</frm:select> <span id="deptnoErr"></span></td>
 		</tr>
 		<tr>
 			<td><input type="submit" value="register" /> <input

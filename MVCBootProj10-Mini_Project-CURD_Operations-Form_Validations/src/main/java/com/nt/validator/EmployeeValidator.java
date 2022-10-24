@@ -35,7 +35,7 @@ public class EmployeeValidator implements Validator {
 		if (!errors.hasFieldErrors("sal")) {
 			if (emp.getSal() == null) //required rule
 				errors.rejectValue("sal", "emp.salary.required");
-			else if (emp.getSal() < 1000.0 || emp.getSal() >= 10000.0) //range rule
+			else if (emp.getSal() < 1000.0 || emp.getSal() >10000.0) //range rule
 				errors.rejectValue("sal", "emp.salary.range");
 		}
 
