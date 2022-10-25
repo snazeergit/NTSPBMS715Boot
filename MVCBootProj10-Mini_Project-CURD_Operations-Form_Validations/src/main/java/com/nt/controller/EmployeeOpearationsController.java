@@ -3,8 +3,6 @@ package com.nt.controller;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -49,16 +47,19 @@ public class EmployeeOpearationsController {
 
 	@PostMapping("/emp_add")
 	public String saveEmployee(@ModelAttribute("emp") Employee emp, RedirectAttributes attrs, BindingResult errors) {
-		//use Validator
-		if (empValidator.supports(Employee.class)) {
-			empValidator.validate(emp, errors);
 
-			//Application Logic errors
-			if (empService.isDesignationRejectedList(emp.getJob()))
-				errors.rejectValue("job", "emp.desg.reject");
+		if (emp.getVflag().equalsIgnoreCase("no")) {
+			//use Validator
+			if (empValidator.supports(Employee.class)) {
+				empValidator.validate(emp, errors);
 
-			if (errors.hasErrors())//if form validation error messages are found
-				return "register_emp";
+				//Application Logic errors
+				if (empService.isDesignationRejectedList(emp.getJob()))
+					errors.rejectValue("job", "emp.desg.reject");
+
+				if (errors.hasErrors())//if form validation error messages are found
+					return "register_emp";
+			}
 		}
 		String msg = empService.registerEmployee(emp);
 		//keep the result as flash attribute
@@ -78,18 +79,21 @@ public class EmployeeOpearationsController {
 
 	@PostMapping("/emp_edit")
 	public String EditEmployee(RedirectAttributes attrs, @ModelAttribute("emp") Employee emp, BindingResult errors) {
-		String msg = empService.updateEmployee(emp);
-		//use Validator
-		if (empValidator.supports(Employee.class)) {
-			empValidator.validate(emp, errors);
 
-			//Application Logic errors
-			if (empService.isDesignationRejectedList(emp.getJob()))
-				errors.rejectValue("job", "emp.desg.reject");
+		if (emp.getVflag().equalsIgnoreCase("no")) {
+			//use Validator
+			if (empValidator.supports(Employee.class)) {
+				empValidator.validate(emp, errors);
 
-			if (errors.hasErrors())//if form validation error messages are found
-				return "update_emp";
+				//Application Logic errors
+				if (empService.isDesignationRejectedList(emp.getJob()))
+					errors.rejectValue("job", "emp.desg.reject");
+
+				if (errors.hasErrors())//if form validation error messages are found
+					return "update_emp";
+			}
 		}
+		String msg = empService.updateEmployee(emp);
 		//add result message to flash attribute 
 		attrs.addFlashAttribute("resultMsg", msg);
 		//redirect to destination handler

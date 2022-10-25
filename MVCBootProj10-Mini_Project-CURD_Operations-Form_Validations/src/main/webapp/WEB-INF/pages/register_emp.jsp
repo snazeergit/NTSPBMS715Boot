@@ -41,8 +41,10 @@
 				</frm:select> <span id="deptnoErr"></span></td>
 		</tr>
 		<tr>
-			<td><input type="submit" value="register" /> <input
-				type="reset" value="cancel" /> <a href="./">Home</a></td>
+			<frm:hidden path="vflag" />
+		<tr>
+			<td><input type="submit" value="Register" /> <input
+				type="reset" value="Cancel" /> <a href="./">Home</a></td>
 		</tr>
 	</table>
 </frm:form>

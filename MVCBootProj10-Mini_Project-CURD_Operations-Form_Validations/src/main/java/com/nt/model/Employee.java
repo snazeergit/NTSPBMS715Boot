@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import lombok.Data;
 
@@ -30,4 +31,7 @@ public class Employee implements Serializable {
 	private Float sal;
 	private Integer deptno;
 	private String status = "active";
+	
+	@Transient
+	private String vflag="no";
 }
