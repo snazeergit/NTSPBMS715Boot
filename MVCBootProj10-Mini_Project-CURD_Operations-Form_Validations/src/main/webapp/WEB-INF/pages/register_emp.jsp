@@ -39,13 +39,12 @@
 			<td><frm:select path="deptno">
 					<frm:options items="${deptNoInfo}" />
 				</frm:select> <span id="deptnoErr"></span></td>
-		</tr>
-		<tr>
-			<frm:hidden path="vflag" />
+		</tr>			
 		<tr>
 			<td><input type="submit" value="Register" /> <input
 				type="reset" value="Cancel" /> <a href="./">Home</a></td>
 		</tr>
 	</table>
+	<frm:hidden path="vflag" />
 </frm:form>
 

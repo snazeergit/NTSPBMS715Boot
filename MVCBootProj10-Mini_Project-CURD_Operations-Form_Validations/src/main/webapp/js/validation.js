@@ -6,6 +6,8 @@ function doValidations(frm) {
 	document.getElementById("salErr").innerHTML = "";
 	document.getElementById("deptnoErr").innerHTML = "";
 
+	alert("Client side Form validations")
+
 	//read form component values
 	let name = frm.ename.value;
 	let desg = frm.job.value;
@@ -14,17 +16,14 @@ function doValidations(frm) {
 	let isValid = true;
 
 	//write client side form validation logics
-	alert("before name")
 	if (name == "") {//required rule
-		alert("null  name")
 		document.getElementById("enameErr	").innerHTML = "Employee name is mandatory";
 		isValid = false;
 	} else if (name.length < 5 || name.legnth > 20) {//length rule
-		alert("insufficient length name")
 		document.getElementById("enameErr	").innerHTML = "Employee name must be in range of 5 to 20 letters";
 		isValid = false;
 	}
-	alert("after name")
+	
 	if (desg == "") {//required rule
 		document.getElementById("jobErr").innerHTML = "Employee job is mandatory";
 		isValid = false;
