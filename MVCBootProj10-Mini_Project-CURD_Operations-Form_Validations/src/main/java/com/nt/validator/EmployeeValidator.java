@@ -15,7 +15,7 @@ public class EmployeeValidator implements Validator {
 	}
 
 	@Override
-	public void validate(Object target, Errors errors) {//Place the Form logic here
+	public void validate(Object target, Errors errors) {//Place the Form validation logic here
 		// Type casting with Model calss
 		Employee emp = (Employee) target;
 
