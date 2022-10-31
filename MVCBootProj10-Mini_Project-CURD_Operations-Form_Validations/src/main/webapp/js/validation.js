@@ -1,12 +1,11 @@
 function doValidations(frm) {
-
+	alert("Client side Form validations", frm)
+	
 	//empty old form validation error messages
 	document.getElementById("enameErr	").innerHTML = "";
 	document.getElementById("jobErr").innerHTML = "";
 	document.getElementById("salErr").innerHTML = "";
 	document.getElementById("deptnoErr").innerHTML = "";
-
-	alert("Client side Form validations")
 
 	//read form component values
 	let name = frm.ename.value;

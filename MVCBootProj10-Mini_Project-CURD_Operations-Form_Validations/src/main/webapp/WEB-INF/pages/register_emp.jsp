@@ -1,7 +1,7 @@
 <%@ page isELIgnored="false"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="frm"%>
 <link rel="stylesheet" type="text/css" href="css/style.css" />
-<script language="JavaScript" src="js/validation.js"></script>
+<script type="text/javascript" src="js/validation.js" ></script>
 
 <div
 	style="color: blue; text-align: center; font-size: 60px; font-weight: bolder; background: yellow">Welcome
@@ -39,7 +39,7 @@
 			<td><frm:select path="deptno">
 					<frm:options items="${deptNoInfo}" />
 				</frm:select> <span id="deptnoErr"></span></td>
-		</tr>			
+		</tr>
 		<tr>
 			<td><input type="submit" value="Register" /> <input
 				type="reset" value="Cancel" /> <a href="./">Home</a></td>
