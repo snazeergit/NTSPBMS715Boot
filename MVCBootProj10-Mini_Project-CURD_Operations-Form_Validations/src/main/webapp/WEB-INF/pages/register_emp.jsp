@@ -1,7 +1,7 @@
 <%@ page isELIgnored="false"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="frm"%>
 <link rel="stylesheet" type="text/css" href="css/style.css" />
-<script type="text/javascript" src="js/validation.js" ></script>
+<script type="text/javascript" src="js/valid.js" ></script>
 
 <div
 	style="color: blue; text-align: center; font-size: 60px; font-weight: bolder; background: yellow">Welcome
