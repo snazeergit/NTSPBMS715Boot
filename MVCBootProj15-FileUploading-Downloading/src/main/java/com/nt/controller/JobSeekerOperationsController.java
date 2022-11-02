@@ -1,18 +1,25 @@
 package com.nt.controller;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.nt.entity.JobSeekerInfo;
@@ -26,6 +33,8 @@ public class JobSeekerOperationsController {
 	private IJobSeekerMgmtService jsService;
 	@Autowired
 	private Environment env;
+	@Autowired
+	private ServletContext context;
 
 	@GetMapping("/")
 	public String showHomePage() {
@@ -83,8 +92,8 @@ public class JobSeekerOperationsController {
 		JobSeekerInfo info = new JobSeekerInfo();
 		info.setJsName(js.getJsName());
 		info.setJsAddrs(js.getJsAddrs());
-		info.setPhotoPath(uploadPath + "/" + filename1);
-		info.setResumePath(uploadPath + "/" + filename2);
+		info.setResumePath(uploadPath + "/" + filename1);
+		info.setPhotoPath(uploadPath + "/" + filename2);
 
 		//use service
 		String msg = jsService.registerJobSeeker(info);
@@ -107,5 +116,38 @@ public class JobSeekerOperationsController {
 
 		//return LVN
 		return "report_jobSeeker";
+	}
+
+	@GetMapping("js_download")
+	public String fileDownload(HttpServletResponse res, @RequestParam("jsId") Integer id, @RequestParam("type") String type)throws Exception{
+		//get file path to be downloaded
+		String filePath=null;
+		if(type.equalsIgnoreCase("resume"))
+			filePath=jsService.fetchResumePathByJsId(id);
+		else
+			filePath=jsService.fetchPhotoPathByJsId(id);
+		System.out.println(filePath);
+		
+		//creating a File object representing file to be downloaded
+		File file=new File(filePath);
+		//get the length of the file and make it as the respinse content length
+		res.setContentLengthLong(file.length());
+		//get MIME of th efile and make it as the response content type
+		String mimeType=context.getMimeType(filePath);
+		 mimeType= mimeType==null?"application/octet-stream":mimeType;
+		res.setContentType(mimeType);
+		//Creating InputStream pointing to the file
+		InputStream is=new FileInputStream(file);
+		//create OutputStream pointing to response object
+		OutputStream os=res.getOutputStream();
+		//instract the browser to give file content as downloadable file
+		res.setHeader("Content-Disposition", "attacment;fileName="+file.getName());
+		//write file content to response object
+		IOUtils.copy(is, os);
+		//close strams
+		is.close();
+		os.close();
+		//returning null makes the handler method to send response directly to Browser
+		return null;
 	}
 }

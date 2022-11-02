@@ -31,3 +31,5 @@
 		</tr>
 	</table>
 </frm:form>
+<br>
+<h2 style="text-align: center"><a href="./">Home</a></h2> 

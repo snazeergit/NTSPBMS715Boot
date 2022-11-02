@@ -8,4 +8,8 @@ public interface IJobSeekerMgmtService {
 	public String registerJobSeeker(JobSeekerInfo info);
 
 	public List<JobSeekerInfo> getAllJobSeekers();
+	
+	public String fetchResumePathByJsId(Integer jsId); 
+	
+	public String fetchPhotoPathByJsId(Integer jsId); 
 }

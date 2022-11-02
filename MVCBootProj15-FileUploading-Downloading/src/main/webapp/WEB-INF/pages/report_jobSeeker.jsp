@@ -21,8 +21,8 @@
 					<td>${js.jsId}</td>
 					<td>${js.jsName}</td>
 					<td>${js.jsAddrs}</td>
-					<td><a href="js_download?id=${js.jsId }&type=resume" >download</a></td>
-					<td><a href="js_download?id=${js.jsId }&type=photo" >download</a></td>
+					<td><a href="js_download?jsId=${js.jsId }&type=resume" >download</a></td>
+					<td><a href="js_download?jsId=${js.jsId }&type=photo" >download</a></td>
 				</tr>
 			</c:forEach>
 		</table>
@@ -32,5 +32,5 @@
 	</c:otherwise>
 </c:choose>
 <br>
-<h1 style="text-align: center"><a href="./">Home</a></h1> 
+<h2 style="text-align: center"><a href="./">Home</a></h2> 
 
