@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -77,23 +78,34 @@ public class JobSeekerOperationsController {
 		is2.close();
 		os1.close();
 		os2.close();
-		
+
 		//create Entity class obj by collecting data from Model class object
-		JobSeekerInfo info=new JobSeekerInfo();
+		JobSeekerInfo info = new JobSeekerInfo();
 		info.setJsName(js.getJsName());
 		info.setJsAddrs(js.getJsAddrs());
-		info.setPhotoPath(uploadPath+"/"+filename1);
-		info.setResumePath(uploadPath+"/"+filename2);
-		
+		info.setPhotoPath(uploadPath + "/" + filename1);
+		info.setResumePath(uploadPath + "/" + filename2);
+
 		//use service
-		String msg=jsService.registerJobSeeker(info);
-		
+		String msg = jsService.registerJobSeeker(info);
+
 		//add the names of the uploaded files to ModelAttribute
 		map.put("filename1", filename1);
 		map.put("filename2", filename2);
 		map.put("resultMsg", msg);
-		
+
 		//return LVN
 		return "show_result";
+	}
+
+	@GetMapping("/js_report")
+	public String showJsReport(Map<String, Object> map) {
+
+		//use service
+		List<JobSeekerInfo> jobSeekers = jsService.getAllJobSeekers();
+		map.put("jsInfo", jobSeekers);
+
+		//return LVN
+		return "report_jobSeeker";
 	}
 }

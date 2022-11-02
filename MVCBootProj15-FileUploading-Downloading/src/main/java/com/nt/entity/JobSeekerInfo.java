@@ -19,7 +19,7 @@ public class JobSeekerInfo implements Serializable {
 	@Id
 	@Column(name = "JS_ID")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer jsid;
+	private Integer jsId;
 	@Column(name = "JS_NAME", length = 30)
 	private String jsName;
 	@Column(name = "JS_ADDRS", length = 30)
