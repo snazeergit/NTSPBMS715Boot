@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.nt.exception.TypeNotFoundException;
 import com.nt.service.IEmployeeMgmtService;
 
 @Controller
@@ -23,10 +24,13 @@ public class EmployeeOpearationsController {
 	}
 
 	@GetMapping("/report")
-	public String showEmployeeReport(Map<String, Object> map, @RequestParam("type") String type) {
+	public String showEmployeeReport(Map<String, Object> map, @RequestParam("type") String type) throws TypeNotFoundException {
 
 		//keeping the results in model attribute
 		map.put("empList", empService.getAllEmployees());
+		
+		if(type.equalsIgnoreCase("pdf"))
+			throw new TypeNotFoundException("Invalid Report Type");
 		
 		if (type.equalsIgnoreCase("pdf"))
 			return "pdf_report";
