@@ -1,11 +1,11 @@
 package com.nt.runner;
 
-import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.nt.document.Employee;
 import com.nt.service.IEmployeeService;
@@ -19,8 +19,12 @@ public class MongoRepositoryTestRunner implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		//saveEmp();
-		saveAllEmp();
 		//findAllEmp();
+		//saveAllEmp();
+		//System.out.println("Doc info: " + empService.searchEmployeeById("637e719a56a8400c8b945baa"));
+		//System.out.println(empService.modifyEmployeeById("637e719a56a8400c8b945baa", 77777.7));
+		//System.out.println(empService.removeEmployeeById("637e735b7e725365b31787e0"));
+		empService.showAllEmployeesInSortedOrder(false, "eadd").forEach(System.out::println);
 	}
 
 	private void saveAllEmp() {
