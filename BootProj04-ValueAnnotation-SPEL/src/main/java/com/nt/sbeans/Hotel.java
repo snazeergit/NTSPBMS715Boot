@@ -19,7 +19,7 @@ public class Hotel {
 	@Value("${customer.name}")
 	private String customerName;
 
-	//Spring Expression Lang(SPEL) for arithmatic ops
+	//Spring Expression Language(SPEL) for arithmetic operations
 	@Value("#{menuItems.idly+menuItems.dosa}")
 	private Float billAmount;
 
