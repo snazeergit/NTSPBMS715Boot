@@ -9,7 +9,7 @@ import lombok.Data;
 @Component("customer")
 @ConfigurationProperties(prefix = "cust.info")//prefix used in the properties or yml file
 @Data
-@PropertySource(value = "classpath:app.properties")// for custom proprties file
+//@PropertySource(value = "classpath:app.properties")// for custom properties file
 public class Customer {
 
 	private Integer custNo;
