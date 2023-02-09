@@ -17,5 +17,5 @@ public class Company {
 	private String addrs;
 	private long pincode;
 	@Value("1111111")
-	private long contact;//@Value and @ConfigurationProperties both configured and @Config will take precedance over @Value 
+	private long contact;//@Value and @ConfigurationProperties both configured and @Config will take precedence over @Value 
 }
