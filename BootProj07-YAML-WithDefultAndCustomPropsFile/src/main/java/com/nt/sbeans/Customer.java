@@ -19,7 +19,7 @@ public class Customer {
 }
 
 
-/*If we confiure below 3 
+/*If we configure below 3 
 1.application.properties(default properties file), 
 2.application.yml(default yml file) and 
 3.app.properties(customer properties file)
