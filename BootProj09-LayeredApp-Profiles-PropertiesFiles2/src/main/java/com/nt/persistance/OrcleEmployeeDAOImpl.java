@@ -10,13 +10,14 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import com.nt.model.Employee;
 
 @Repository("oracleEmpDAO")
-@Profile({ "uat", "prod"})
+@Profile({ "uat", "prod","default"})
 public class OrcleEmployeeDAOImpl implements IEmployeeDAO {
 
 	private static final String GET_EMPS_BY_DESGS = "SELECT ENO,ENAME,JOB,SAL,DEPTNO FROM EMPLOYEE WHERE JOB IN(?,?,?) ORDER BY JOB";

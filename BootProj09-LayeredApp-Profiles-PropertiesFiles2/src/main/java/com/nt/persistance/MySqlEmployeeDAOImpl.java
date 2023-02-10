@@ -16,7 +16,7 @@ import org.springframework.stereotype.Repository;
 import com.nt.model.Employee;
 
 @Repository("mySqlEmpDAO")
-@Profile({ "dev","test","default" })
+@Profile({ "dev","test" })
 public class MySqlEmployeeDAOImpl implements IEmployeeDAO {
 
 	private static final String GET_EMPS_BY_DESGS = "SELECT ENO,ENAME,JOB,SAL,DEPTNO FROM EMPLOYEE WHERE JOB IN(?,?,?) ORDER BY JOB";
