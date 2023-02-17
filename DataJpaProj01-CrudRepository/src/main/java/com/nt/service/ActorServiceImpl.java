@@ -13,7 +13,7 @@ import com.nt.repository.IActorRepository;
 @Service("actorService")
 public class ActorServiceImpl implements IActorService {
 
-	//InMemory Proxy Class object that implements Custom reposity interface will be injected 
+	//InMemory Proxy Class object that implements Custom repository interface will be injected 
 	@Autowired
 	private IActorRepository repository;
 

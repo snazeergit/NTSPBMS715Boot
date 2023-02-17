@@ -18,7 +18,7 @@ import lombok.RequiredArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@RequiredArgsConstructor//generated parameterized constructor with non-null feild as args only
+@RequiredArgsConstructor//generated parameterized constructor with non-null field as args only
 public class Actor {
 
 	@Id
