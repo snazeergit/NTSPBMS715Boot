@@ -6,7 +6,7 @@ import com.nt.document.Player;
 
 public interface IPlayerMgmtService {
 
-	public String registerPlayer(Player person);
+	public String registerPlayer(Player player);
 
 	public List<Player> showPlayersInfo();
 
