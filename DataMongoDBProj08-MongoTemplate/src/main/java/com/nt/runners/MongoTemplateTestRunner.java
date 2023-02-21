@@ -35,8 +35,11 @@ public class MongoTemplateTestRunner implements CommandLineRunner {
 		service.fetchStockDetailsByPriceRange(5000, 8000).forEach(System.out::println);*/
 
 		//findById operation
-		StockDetails stockDetails = service.fetchStockDetailsByStockId(418);
-		System.out.println("Stock Id 418 details: " + stockDetails);
+		/*StockDetails stockDetails = service.fetchStockDetailsByStockId(418);
+		System.out.println("Stock Id 418 details: " + stockDetails);*/
+		
+		//findAndModify operation
+		System.out.println(service.fetchAndUpdateStockDetailsByStokId(418, 5555.0, "NSE"));
 	}
 
 }

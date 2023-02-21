@@ -12,4 +12,5 @@ public interface IStockMgmtService {
 	public List<StockDetails> fetchStockDetailsByPriceRange(double startPrice,double endPrice);
 	
 	public StockDetails fetchStockDetailsByStockId(int stockId);
+	public String fetchAndUpdateStockDetailsByStokId(int stockId, double newPrice, String newExchangeName);
 }

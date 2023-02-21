@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
 import com.nt.document.StockDetails;
@@ -64,5 +65,19 @@ public class StockMgmtServiceImpl implements IStockMgmtService {
 		return template.findById(stockId, StockDetails.class);
 		//searches in specified collection "Stock"
 		//return template.findById(stockId, StockDetails.class,"Stock");
+	}
+
+	@Override
+	public String fetchAndUpdateStockDetailsByStokId(int stockId, double newPrice, String newExchangeName) {
+		Query query = new Query();
+		query.addCriteria(Criteria.where("stockId").is(stockId));
+		//Update object for modification
+		Update update = new Update();
+		update.set("price", newPrice);
+		update.set("exchangeName", newExchangeName);
+		//call the method
+		StockDetails details = template.findAndModify(query, update, StockDetails.class);
+		System.out.println(details);
+		return details == null ? "stock details doesn't found" : "Stock details found and updated";
 	}
 }
