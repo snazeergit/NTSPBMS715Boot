@@ -37,9 +37,21 @@ public class MongoTemplateTestRunner implements CommandLineRunner {
 		//findById operation
 		/*StockDetails stockDetails = service.fetchStockDetailsByStockId(418);
 		System.out.println("Stock Id 418 details: " + stockDetails);*/
-		
+
 		//findAndModify operation
-		System.out.println(service.fetchAndUpdateStockDetailsByStokId(418, 5555.0, "NSE"));
+		/*System.out.println(service.fetchAndUpdateStockDetailsByStokId(418, 5555.0, "NSE"));*/
+
+		//updateMulti operation
+		/*System.out.println(service.modifyExchangeByStockPriceRange(7000, 9000, "NYSE"));*/
+
+		//upsert operation
+		/*	System.out.println(service.registerOrUpdateStockByStockName("AXIS", 3333,"NASDAQ"));*/
+
+		//findAndRemove operation
+		/*System.out.println(service.fetchAndRemoveByStockName("AXIS"));*/
+
+		//findAllAndRemove operation
+		System.out.println(service.fetchAllAndRemoveByStockName("AXIS"));
 	}
 
 }
