@@ -2,10 +2,10 @@ package com.nt.config;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
-import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
+import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,17 +15,16 @@ import com.nt.processor.BookDetailsProcessor;
 import com.nt.reader.BookDetailsReader;
 import com.nt.writer.BookDetailsWriter;
 
-@EnableBatchProcessing
-/*Gives Spring Batch features through AutoConfiguration like giving
- * InMemoryJpbRepository, JobBuilderFactory,StepBuilderFactory and etc.
- */
 @Configuration
 public class BatchConfig {
 
 	@Autowired
-	private JobBuilderFactory jobFactory;
+	private StepBuilderFactory stepBuilderFactory;
 	@Autowired
-	private StepBuilderFactory stepFactory;
+	private JobBuilderFactory jobBuilderFactory;
+
+	@Autowired
+	private JobRepository jobRepository;
 	@Autowired
 	private BookDetailsReader bdReader;
 	@Autowired
@@ -36,19 +35,54 @@ public class BatchConfig {
 	private JobMonitoringListener jobListener;
 
 	//Create Step object using StepBuilderFactory
-	@Bean(name = "step1")
+	@Bean(name="step1")
 	public Step createStep1() {
 		System.out.println("BatchConfig.creteStep1()");
-		return stepFactory.get("step1").<String, String>chunk(1).reader(bdReader).processor(bdProcessor)
+		return stepBuilderFactory.get("step1").<String, String>chunk(1).reader(bdReader).processor(bdProcessor)
 				.writer(bdWriter).build();
 	}
 
 	//Create Job using JobBuilderFactory
-	@Bean(name = "job1")
+	@Bean(name="job1")
 	public Job createJob() {
 		System.out.println("BatchConfig.createJob()");
-		return jobFactory.get("job1").incrementer(new RunIdIncrementer()).listener(jobListener).start(createStep1())
-				.build();
+		return jobBuilderFactory.get("job1").incrementer(new RunIdIncrementer()).listener(jobListener)
+				.start(createStep1()).build();
 	}
 
+	/*
+		//Create Step object using StepBuilderFactory
+		@Bean
+		public Step createStep1(PlatformTransactionManager txManager) {
+			System.out.println("BatchConfig.creteStep1()");
+			return new StepBuilderFactory(jobRepository).get("createStep1").<String, String>chunk(1, txManager)
+					.reader(bdReader).processor(bdProcessor).writer(bdWriter).build();
+		}
+	
+		//Create Job using JobBuilderFactory
+		@Bean
+		public Job createJob(Step step1) {
+			System.out.println("BatchConfig.createJob()");
+			return new JobBuilderFactory(jobRepository).get("createJob").incrementer(new RunIdIncrementer())
+					.listener(jobListener).start(step1).build();
+		}
+	*/
+
+	/*
+		//Create Step object using StepBuilder
+		@Bean(name = "step1")
+		public Step createStep1(JobRepository jobRepository, PlatformTransactionManager transactionManager) {
+			System.out.println("BatchConfig.creteStep1()");
+			return new StepBuilder("step1", jobRepository).<String, String>chunk(1, transactionManager).reader(bdReader)
+					.processor(bdProcessor).writer(bdWriter).build();
+		}
+	
+		//Create Job using JobBuilder
+		@Bean(name = "job1")
+		public Job createJob(JobRepository jobRepository, Step step1) {
+			System.out.println("BatchConfig.createJob()");
+			return new JobBuilder("job1", jobRepository).incrementer(new RunIdIncrementer()).listener(jobListener)
+					.flow(step1).end().build();
+		}
+	*/
 }

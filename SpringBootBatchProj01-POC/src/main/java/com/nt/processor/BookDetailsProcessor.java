@@ -22,7 +22,7 @@ public class BookDetailsProcessor implements ItemProcessor<String, String> {
 		} else if (item.equalsIgnoreCase("EJ")) {
 			bookWithTitle = item + " by JB";
 		} else if (item.equalsIgnoreCase("BBJ")) {
-			bookWithTitle = item + "by RNR";
+			bookWithTitle = item + " by RNR";
 		}
 		return bookWithTitle;
 	}

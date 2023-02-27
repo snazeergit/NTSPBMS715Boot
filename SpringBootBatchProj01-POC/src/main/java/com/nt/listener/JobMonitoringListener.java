@@ -26,7 +26,6 @@ public class JobMonitoringListener implements JobExecutionListener {
 	public void afterJob(JobExecution jobExecution) {
 		System.out.println("Job completed at ::" + new Date());
 		endTime = System.currentTimeMillis();
-		JobExecutionListener.super.afterJob(jobExecution);
 		System.out.println("Job Status::" + jobExecution.getStatus());
 		System.out.println("Job Execution Time::" + (endTime - startTime));
 		System.out.println("Job Exit Status::" + jobExecution.getExitStatus());

@@ -1,6 +1,7 @@
 package com.nt.writer;
 
-import org.springframework.batch.item.Chunk;
+import java.util.List;
+
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.stereotype.Component;
 
@@ -12,9 +13,9 @@ public class BookDetailsWriter implements ItemWriter<String> {
 	}
 
 	@Override
-	public void write(Chunk<? extends String> chunk) throws Exception {
+	public void write(List<? extends String> items) throws Exception {
 		System.out.println("BookDetailsWriter.write()");
-		chunk.forEach(System.out::println);
+		items.forEach(System.out::println);
 	}
 
 }
