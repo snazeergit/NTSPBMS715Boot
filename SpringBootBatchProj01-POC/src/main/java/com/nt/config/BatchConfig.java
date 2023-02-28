@@ -57,39 +57,4 @@ public class BatchConfig {
 				.start(createStep1()).build();
 	}
 
-	/*
-		//Create Step object using StepBuilderFactory
-		@Bean
-		public Step createStep1(PlatformTransactionManager txManager) {
-			System.out.println("BatchConfig.creteStep1()");
-			return new StepBuilderFactory(jobRepository).get("createStep1").<String, String>chunk(1, txManager)
-					.reader(bdReader).processor(bdProcessor).writer(bdWriter).build();
-		}
-	
-		//Create Job using JobBuilderFactory
-		@Bean
-		public Job createJob(Step step1) {
-			System.out.println("BatchConfig.createJob()");
-			return new JobBuilderFactory(jobRepository).get("createJob").incrementer(new RunIdIncrementer())
-					.listener(jobListener).start(step1).build();
-		}
-	*/
-
-	/*
-		//Create Step object using StepBuilder
-		@Bean(name = "step1")
-		public Step createStep1(JobRepository jobRepository, PlatformTransactionManager transactionManager) {
-			System.out.println("BatchConfig.creteStep1()");
-			return new StepBuilder("step1", jobRepository).<String, String>chunk(1, transactionManager).reader(bdReader)
-					.processor(bdProcessor).writer(bdWriter).build();
-		}
-	
-		//Create Job using JobBuilder
-		@Bean(name = "job1")
-		public Job createJob(JobRepository jobRepository, Step step1) {
-			System.out.println("BatchConfig.createJob()");
-			return new JobBuilder("job1", jobRepository).incrementer(new RunIdIncrementer()).listener(jobListener)
-					.flow(step1).end().build();
-		}
-	*/
 }
