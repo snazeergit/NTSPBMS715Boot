@@ -4,10 +4,7 @@ import org.springframework.batch.core.configuration.annotation.EnableBatchProces
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-/*Gives Spring Batch features through AutoConfiguration like giving
- * InMemoryJpbRepository, JobBuilderFactory,StepBuilderFactory and etc.
- */
-@EnableBatchProcessing
+
 @SpringBootApplication
 public class SpringBootBatchProj01PocApplication {
 

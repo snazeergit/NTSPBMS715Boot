@@ -2,6 +2,7 @@ package com.nt.config;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
+import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
@@ -15,6 +16,10 @@ import com.nt.processor.BookDetailsProcessor;
 import com.nt.reader.BookDetailsReader;
 import com.nt.writer.BookDetailsWriter;
 
+/*Gives Spring Batch features through AutoConfiguration like giving
+ * InMemoryJpbRepository, JobBuilderFactory,StepBuilderFactory and etc.
+ */
+@EnableBatchProcessing
 @Configuration
 public class BatchConfig {
 
@@ -35,7 +40,7 @@ public class BatchConfig {
 	private JobMonitoringListener jobListener;
 
 	//Create Step object using StepBuilderFactory
-	@Bean(name="step1")
+	@Bean(name = "step1")
 	public Step createStep1() {
 		System.out.println("BatchConfig.creteStep1()");
 		//here chunk(2) means it reads first record and then reads second record the process first record and then process second record
@@ -45,7 +50,7 @@ public class BatchConfig {
 	}
 
 	//Create Job using JobBuilderFactory
-	@Bean(name="job1")
+	@Bean(name = "job1")
 	public Job createJob() {
 		System.out.println("BatchConfig.createJob()");
 		return jobBuilderFactory.get("job1").incrementer(new RunIdIncrementer()).listener(jobListener)
