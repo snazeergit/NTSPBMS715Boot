@@ -38,7 +38,9 @@ public class BatchConfig {
 	@Bean(name="step1")
 	public Step createStep1() {
 		System.out.println("BatchConfig.creteStep1()");
-		return stepBuilderFactory.get("step1").<String, String>chunk(1).reader(bdReader).processor(bdProcessor)
+		//here chunk(2) means it reads first record and then reads second record the process first record and then process second record
+		//then writes both the records to Destination in one go. Chunk size represents no of records the it can write to destination in one transaction.
+		return stepBuilderFactory.get("step1").<String, String>chunk(2).reader(bdReader).processor(bdProcessor)
 				.writer(bdWriter).build();
 	}
 
