@@ -79,6 +79,7 @@ public class ActorServiceImpl implements IActorService {
 		Optional<Actor> optional = repository.findById(id);
 		if (optional.isPresent()) {
 			optional.get().setMobileNo(newMobileNo);
+			repository.save(optional.get());
 			return "Mobile number updated successfully";
 		} else {
 			return "Actor not found with given id " + id + " for Mobile number updation";
@@ -93,7 +94,6 @@ public class ActorServiceImpl implements IActorService {
 		} else {
 			return "Problem occurred while updating Actor";
 		}
-
 	}
 
 	@Override
