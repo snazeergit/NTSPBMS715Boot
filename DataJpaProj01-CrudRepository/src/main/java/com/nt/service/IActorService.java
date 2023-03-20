@@ -7,10 +7,12 @@ import com.nt.entity.Actor;
 
 public interface IActorService {
 
+	//CREATE
 	public String registerActor(Actor actor);
 
 	public String registerAllActor(List<Actor> actors);
 
+	//READ
 	public long fetchRecordsCount();
 
 	public Iterable<Actor> fetchAllActors();
@@ -23,12 +25,14 @@ public interface IActorService {
 
 	public Actor showActorById(int id);
 
+	//UPDATE
 	public String updateActorMobileNo(int id, long newMobileNo);
 
 	public String updateActor(Actor actor);
 
 	public String registerOrUpdateActor(Actor actor);
 
+	//DELETE
 	public String removeActorById(int id);
 
 	public String removeActor(Actor actor);
