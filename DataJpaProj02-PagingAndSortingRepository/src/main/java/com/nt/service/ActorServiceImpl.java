@@ -13,13 +13,13 @@ import com.nt.repository.IActorRepository;
 @Service("actorService")
 public class ActorServiceImpl implements IActorService {
 
-	//InMemory Proxy Class object that implements Custom reposity interface will be injected 
+	//InMemoryProxy Class object that implements Custom repository interface will be injected 
 	@Autowired
 	private IActorRepository repository;
 
 	@Override
-	public Iterable<Actor> showActorsByOrder(boolean asc, String... properties) {
-		//True->ascending                Flase->Descending order
+	public Iterable<Actor> showActorsByOrder(boolean asc, String... properties) { //based on property sorting happens
+		//True->ascending                False->Descending order
 		Sort sort = Sort.by(asc ? Direction.ASC : Direction.DESC, properties);
 		//get records by applying sorting
 		Iterable<Actor> iterable = repository.findAll(sort);

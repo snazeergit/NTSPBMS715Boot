@@ -18,7 +18,7 @@ public class PagingAndSortingRepositoryTestRunner implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		//true -> asceding order false -> descending order
+		//true -> ascending order false -> descending order
 		service.showActorsByOrder(true, "aid").forEach(System.out::println);
 		service.showActorsByOrder(true, "aName", "category").forEach(System.out::println);
 
