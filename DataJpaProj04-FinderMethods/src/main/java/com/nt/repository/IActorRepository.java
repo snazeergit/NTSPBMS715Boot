@@ -15,7 +15,7 @@ public interface IActorRepository extends JpaRepository<Actor, Integer> {
 		Now aName is the entity class property and Equals is the condition, findBy is the fixed method prefix
 		since our property name is aName so it becomes findByaNameEquals()
 		
-	->   if the property name's all letter is in lowercase or first word is Lower case and second word first letter is in Upper 
+	->   if the property name's all letter is in lower case or first word is Lower case and second word first letter is in Upper 
 	    then you can use  the property names first letter in upper or  as it is.
 		Now category is the entity class property and Equals is the condition, findBy is the fixed method prefix
 		since our property name is category so it becomes findBycategoryEquals()	or findByCategoryEquals() */
@@ -69,7 +69,7 @@ public interface IActorRepository extends JpaRepository<Actor, Integer> {
 	//select aid, aname from data_jpa_actor where mobileNo=?
 	public ResultView findByMobileNo(long mobileNo);
 	
-	//selcet * from data_jpa_actor where mobileNo=?
+	//select * from data_jpa_actor where mobileNo=?
 	public Actor findByMobileNoIs(long mobileNo);
 
 	//DYNAMIC PROJECTIONS

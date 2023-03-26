@@ -95,12 +95,18 @@ public class FinderMethodsTestRunner implements CommandLineRunner {
 		//same mobileNo it will through IncorrectResultSizeDataAccessException
 		System.out.println("Actor Name and ID whose mobile no is 11111:: ");
 		ResultView view1 = repository.findByMobileNo(11111l);
-		System.out.println(view1.getAid() + "  " + view1.getAname());
+		if (view1 != null)
+			System.out.println(view1.getAid() + "  " + view1.getAname());
+		else
+			System.err.println("Oops....! Given mobile no not found");
 		System.out.println("-------------------------");
 
 		System.out.println("Actor Name and ID whose mobile no is 11111:: ");
 		Actor actor = repository.findByMobileNoIs(11111l);
-		System.out.println(actor.getAid() + "  " + actor.getAname());
+		if (actor != null)
+			System.out.println(actor.getAid() + "  " + actor.getAname());
+		else
+			System.err.println("Oops....! No Actor found with the given mobile no.");
 		System.out.println("-------------------------");
 
 		//Dynamic Projections
