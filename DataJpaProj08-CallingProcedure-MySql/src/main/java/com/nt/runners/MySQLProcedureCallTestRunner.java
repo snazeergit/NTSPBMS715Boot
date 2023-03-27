@@ -18,3 +18,9 @@ public class MySQLProcedureCallTestRunner implements CommandLineRunner {
 	}
 
 }
+/*
+CREATE DEFINER=`snazeer`@`%` PROCEDURE `P_GET_EMP_DETAILS_BY_DESG`(IN job1 VARCHAR(10),IN job2 varchar(10))
+BEGIN
+SELECT ENO,ENAME,DESG,SALARY FROM JPA_EMPLOYEE WHERE DESG IN(job1,job2) ORDER BY DESG;
+END
+*/
