@@ -42,7 +42,7 @@ public class RegisterPersonTestRunner implements CommandLineRunner {
 		fis.read(photoContent);
 		fis.close();
 
-		//Preapare char[] from the resume file content
+		//Prepare char[] from the resume file content
 		File file2 = new File(resumePath);
 		FileReader reader = new FileReader(file2);
 		char[] resumeContent = new char[(int) file2.length()];
