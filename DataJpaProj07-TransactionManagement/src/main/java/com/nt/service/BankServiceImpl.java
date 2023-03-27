@@ -21,7 +21,7 @@ public class BankServiceImpl implements IBankService {
 			throw new RuntimeException("Problem occurred, Money Transfer operation is aborted");//must be unchecked exception
 		}
 		return "**************Rs " + amount + " INR money transfered from account no " + srcAcno + " to " + depositMoney
-				+ "successfully.***************";
+				+ " successfully.***************";
 	}
 
 }
