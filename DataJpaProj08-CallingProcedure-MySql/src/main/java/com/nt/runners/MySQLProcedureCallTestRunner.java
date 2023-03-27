@@ -14,7 +14,7 @@ public class MySQLProcedureCallTestRunner implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		service.fetchEMpByDesg("salesman", "clerk").forEach(System.out::println);
+		service.fetchEmpByDesg("salesman", "clerk").forEach(System.out::println);
 	}
 
 }

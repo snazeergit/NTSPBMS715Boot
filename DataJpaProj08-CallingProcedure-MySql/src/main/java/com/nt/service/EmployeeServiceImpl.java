@@ -18,7 +18,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
 	private EntityManager manager;
 
 	@Override
-	public List<Employee> fetchEMpByDesg(String desg1, String desg2) {
+	public List<Employee> fetchEmpByDesg(String desg1, String desg2) {
 
 		//Create StoredProcedureQuery object pointing to PL/SQL Procedure
 		StoredProcedureQuery query = manager.createStoredProcedureQuery("P_GET_EMP_DETAILS_BY_DESG", Employee.class);
