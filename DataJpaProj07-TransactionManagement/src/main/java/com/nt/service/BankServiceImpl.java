@@ -13,7 +13,7 @@ public class BankServiceImpl implements IBankService {
 	private IAccountRepository repository;
 
 	@Override
-	@Transactional //mandatory as its deling with mutliple persistance operations
+	@Transactional //mandatory as its dealing with multiple persistence operations
 	public String transferMoney(Long srcAcno, Long destAcno, Double amount) {
 		int withdrawMoney = repository.withdrawMoney(srcAcno, amount);
 		int depositMoney = repository.depositMoney(destAcno, amount);
