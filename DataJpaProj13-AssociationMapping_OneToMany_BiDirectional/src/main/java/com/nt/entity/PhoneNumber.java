@@ -36,7 +36,13 @@ public class PhoneNumber {
 	private Person person;
 
 	public PhoneNumber() {
-		System.out.println("PhoneNumber::0-param Constructor" + this.getClass());
+		System.out.println("PhoneNumber::0-param Constructor " + this.getClass());
+	}
+
+	@Override
+	public String toString() {
+		return "PhoneNumber [regno=" + regno + ", phone_number=" + phone_number + ", number_type=" + number_type
+				+ ", provider=" + provider + "]";
 	}
 
 }

@@ -29,13 +29,13 @@ public class AssociationMappingTestRunner implements CommandLineRunner {
 		ph1.setNumber_type("Home");
 		ph1.setPhone_number(9999L);
 		ph1.setProvider("Jio");
-		ph1.setPerson(person); //Child to Person (Many to One)
+		ph1.setPerson(person); //Child to Parent (Many to One)
 		
 		PhoneNumber ph2 = new PhoneNumber();
 		ph2.setNumber_type("Office");
 		ph2.setPhone_number(8888L);
 		ph2.setProvider("Airtel");
-		ph2.setPerson(person); //Child to Person (Many to One)
+		ph2.setPerson(person); //Child to Parent (Many to One)
 		
 		person.setPhones(Set.of(ph1, ph2)); //Parent to Child (One to Many)
 		
@@ -54,13 +54,13 @@ public class AssociationMappingTestRunner implements CommandLineRunner {
 		ph1.setNumber_type("Home");
 		ph1.setPhone_number(7777L);
 		ph1.setProvider("Jio");
-		ph1.setPerson(person); //Child to Person (Many to One)
+		ph1.setPerson(person); //Child to Parent (Many to One)
 		
 		PhoneNumber ph2 = new PhoneNumber();
 		ph2.setNumber_type("Office");
 		ph2.setPhone_number(6666L);
 		ph2.setProvider("Airtel");
-		ph2.setPerson(person); //Child to Person (Many to One)
+		ph2.setPerson(person); //Child to Parent (Many to One)
 		
 		Set<PhoneNumber> phoneSet = new HashSet<>();
 		phoneSet.add(ph1);

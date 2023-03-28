@@ -40,6 +40,12 @@ public class Person implements Serializable {
 	private Set<PhoneNumber> phones;
 
 	public Person() {
-		System.out.println("Person::0-param Constructor" + this.getClass());
+		System.out.println("Person::0-param Constructor " + this.getClass());
 	}
+
+	@Override
+	public String toString() {
+		return "Person [pid=" + pid + ", pname=" + pname + ", paddrs=" + paddrs + ", phones=" + phones + "]";
+	}
+	
 }
