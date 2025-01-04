@@ -15,7 +15,7 @@ import lombok.RequiredArgsConstructor;
 
 @Entity
 @Table(name = "DATA_JPA_ACTOR")
-@Data
+@Data // equivalent to @Setter, @Getter, @RequiredArgsConstructor, @EqualsAndHashCode, @ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @RequiredArgsConstructor//generated parameterized constructor with non-null properties only as arguments.
@@ -27,11 +27,11 @@ public class Actor {
 	private Integer aid;
 
 	@NonNull
-	@Column(name = "ACTOR_NAME", length = 20)
+	@Column(name = "ACTOR_NAME", length = 50)
 	private String aName;
 
 	@NonNull
-	@Column(name = "CATEGORY", length = 20)
+	@Column(name = "CATEGORY", length = 50)
 	private String category;
 
 	@NonNull
