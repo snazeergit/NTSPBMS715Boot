@@ -23,8 +23,11 @@ public class PagingAndSortingRepositoryTestRunner implements CommandLineRunner {
 		service.showActorsByOrder(true, "aName", "category").forEach(System.out::println);
 
 		try {
-			// 0 means first page as it follows 0 based index, 3 means fetch 3 records
-			Page<Actor> page = service.showPageRecords(-1, 3);
+			// pageNo zero-based page index, must not be negative.
+			// pageSize the size of the page to be returned, must be greater than 0.
+			
+			// 1st arg: 0 means first page as it follows 0 based index, 2nd arg: 3 means fetch 3 records
+			Page<Actor> page = service.showPageRecords(0, 3);
 			List<Actor> list = page.getContent();
 			System.out.println("===========================");
 			System.out.println("Records :: ");
